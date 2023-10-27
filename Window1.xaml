@@ -1,0 +1,97 @@
+﻿<Window x:Class="QuanLySach.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLySach"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" FontSize="30px" Grid.Row="0"><Bold>Thêm Mới dữ liệu</Bold></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--<Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,33,0,10" FontSize="15">Ma sach</TextBlock>
+                    <TextBox Grid.ColumnSpan="2" Margin="133,33,0,10"/>
+                </Grid>-->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,33,0,10" FontSize="15">Ma sach</TextBlock>
+                    <TextBox x:Name="Ma_Sach" Grid.ColumnSpan="2" Margin="133,33,0,10" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,33,0,10" FontSize="15">Ten sach</TextBlock>
+                    <TextBox x:Name="Ten_Sach" Grid.ColumnSpan="2" Margin="133,33,0,10" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,33,0,10" FontSize="15">Don Gia</TextBlock>
+                    <TextBox x:Name="Don_Gia" Grid.ColumnSpan="2" Margin="133,33,0,10"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,33,0,10" FontSize="15">So luong</TextBlock>
+                    <TextBox x:Name="So_Luong" Grid.ColumnSpan="2" Margin="133,33,0,10"/>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,33,0,10" FontSize="15">Loai Sach</TextBlock>
+                    <ComboBox SelectedIndex="0" DisplayMemberPath="tenloai" SelectedValuePath="MAloaisach" x:Name="cbbLoaiSach"  Grid.ColumnSpan="2" Margin="133,33,102,10" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock FontSize="15" HorizontalAlignment="Center" Grid.Row="0">Anh Bia</TextBlock>
+                <Button Grid.Row="1" Margin="10,232,0,0" Grid.RowSpan="2" Width="100" Height="20">Upload</Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Width="100" Margin="250,10,50,17" Click="Button_Click">Luu</Button>
+            <Button Grid.Column="1" Width="100" Margin="50,10,250,17">Thoat</Button>
+        </Grid>
+    </Grid>
+</Window>

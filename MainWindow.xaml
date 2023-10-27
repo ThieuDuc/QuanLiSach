@@ -1,0 +1,67 @@
+﻿<Window x:Class="QuanLySach.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLySach"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="0" FontSize="30" Foreground="Blue" Margin="0,10,0,0" ><Bold>Quản Lý Danh Mục</Bold></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Margin="-252,0,156,0" FontSize="15" >Loai Sach</TextBlock>
+                <ComboBox x:Name="cbbLoaiSach" DisplayMemberPath="tenloai" SelectedValuePath="MAloaisach" Margin="-174,0,95,0" SelectionChanged="cbbLoaiSach_SelectionChanged" />
+                <Button Margin="-79,0,10,0"  >Tim Kiem</Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid Name="datagridSach" HorizontalAlignment="Center" Height="243" VerticalAlignment="Center" IsReadOnly="True" AutoGenerateColumns="False" SelectionMode="Single" Width="800" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="colMaSach" Binding="{Binding MaSach}" Header="Ma Sach" Width="120"></DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colTenSach" Binding="{Binding TenSach}" Header="Ten Sach" Width="120"></DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colGiaSach" Binding="{Binding DonGia}" Header="Gia Sach" Width="120"></DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colLoaiSach" Binding="{Binding MAloaisach}" Header="Loai Sach" Width="120"></DataGridTextColumn>
+                        <DataGridTextColumn x:Name="colSoLuongSach" Binding="{Binding SoLuong}" Header="So Luong Sach" Width="120"></DataGridTextColumn>
+                        <!--<DataGridTemplateColumn Header="Sua" Width="50">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button  >Sua</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Xoa" Width="50">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button >Xoa</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Grid >
+                <Button Margin="70,0,-149,21" Click="Add" Width="80" Height="30">Them</Button>
+                <Button Margin="237,0,-320,21" Width="80" Height="30" Click="Button_Sua">Sua</Button>
+                <Button Margin="453,2,-520,22" Width="80" Height="30">Xoa</Button>
+                <Button Margin="647,2,-709,22" Width="80" Height="30" Click="Confirm">Thoat</Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
